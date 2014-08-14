@@ -8,17 +8,17 @@
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 .run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if(window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-    }
-    if(window.StatusBar) {
-      // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
-    }
-  });
+    $ionicPlatform.ready(function() {
+        // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+        // for form inputs)
+        if(window.cordova && window.cordova.plugins.Keyboard) {
+            cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+        }
+        if(window.StatusBar) {
+            // org.apache.cordova.statusbar required
+            StatusBar.styleDefault();
+        }
+    });
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
@@ -35,21 +35,32 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         abstract: true,
         templateUrl: "templates/tabs.html"
     })
+    
     .state('tab.campaigns', {
-      url: '/campaigns',
-      views: {
-        'tab-campaigns': {
-          templateUrl: 'templates/tab-campaigns.html',
-          controller: 'CampaignsCtrl'
+        url: '/campaigns',
+        views: {
+            'tab-campaigns': {
+                templateUrl: 'templates/tab-campaigns.html',
+                controller: 'CampaignsCtrl'
+            }
         }
-      }
     })
     .state('tab.campaign-detail', {
-      url: '/campaigns/:campaignId',
-      views: {
-        'tab-campaigns': {
-          templateUrl: 'templates/campaigns-detail.html',
-          controller: 'CampaignsDetailCtrl'
+        url: '/campaigns/:campaignId',
+            views: {
+                'tab-campaigns': {
+                templateUrl: 'templates/campaigns-detail.html',
+                controller: 'CampaignsDetailCtrl'
+            }
+        }
+    })
+    .state('tab.placement-detail', {
+        url: '/placements/:placementId',
+            views: {
+                'tab-campaigns': {
+                templateUrl: 'templates/placements-detail.html',
+                controller: 'PlacementsDetailCtrl'
+            }
         }
     })
 
@@ -60,7 +71,5 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/login');
-
+  $urlRouterProvider.otherwise('/tab/campaigns');
 });
-
