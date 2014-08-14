@@ -1,7 +1,9 @@
 angular.module('starter.controllers', [])
 
-.controller('LoginCtrl', function($scope) {
-    
+.controller('LoginCtrl', function($scope, $location) {
+    $scope.signIn = function(user) {
+        $location.path('/tab/campaigns');
+    };
 })
 
 .controller('CampaignsCtrl', function($scope, Campaigns) {
