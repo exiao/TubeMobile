@@ -77,18 +77,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
-    .state('tab.login', {
+    .state('login', {
         url: '/login',
-        views: {
-            'tab-account': {
-                templateUrl: 'templates/login.html',
-                controller: 'LoginCtrl'
-            }
-        }
+        controller: 'LoginCtrl',
+        templateUrl: "templates/login.html"
     });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/login');
 
 });
 
