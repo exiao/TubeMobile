@@ -31,9 +31,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
     // setup an abstract state for the tabs directive
     .state('tab', {
-      url: "/tab",
-      abstract: true,
-      templateUrl: "templates/tabs.html"
+        url: "/tab",
+        abstract: true,
+        templateUrl: "templates/tabs.html"
     })
 
     // Each tab has its own nav history stack:
@@ -48,22 +48,22 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     })
     
     .state('tab.campaigns', {
-      url: '/campaigns',
-      views: {
-        'tab-campaigns': {
-          templateUrl: 'templates/tab-campaigns.html',
-          controller: 'campaigns_controller'
+        url: '/campaigns',
+        views: {
+            'tab-campaigns': {
+                templateUrl: 'templates/tab-campaigns.html',
+                controller: 'campaigns_controller'
+            }
         }
-      }
     })
     .state('tab.campaign-detail', {
-      url: '/campaigns/:campaignId',
-      views: {
-        'tab-campaigns': {
-          templateUrl: 'templates/campaigns-detail.html',
-          controller: 'campaigns_detail_controller'
+        url: '/campaigns/:campaignId',
+        views: {
+            'tab-campaigns': {
+                templateUrl: 'templates/campaigns-detail.html',
+                controller: 'campaigns_detail_controller'
+            }
         }
-      }
     });
 
   // if none of the above states are matched, use this as the fallback

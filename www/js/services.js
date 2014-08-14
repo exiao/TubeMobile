@@ -16,4 +16,4 @@ angular.module('starter.services', [])
             return campaigns[id];
         }
     }
-})
+});
