@@ -52,7 +52,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       views: {
         'tab-campaigns': {
           templateUrl: 'templates/tab-campaigns.html',
-          controller: 'campaigns_controller'
+          controller: 'CampaignsCtrl'
         }
       }
     })
@@ -61,7 +61,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       views: {
         'tab-campaigns': {
           templateUrl: 'templates/campaigns-detail.html',
-          controller: 'campaigns_detail_controller'
+          controller: 'CampaignsDetailCtrl'
         }
       }
     });
