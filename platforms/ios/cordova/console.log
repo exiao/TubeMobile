@@ -1,0 +1,24 @@
+2014-08-14 13:40:06.067 tubemobile[80735:90b] Multi-tasking -> Device: YES, App: YES
+2014-08-14 13:40:06.106 tubemobile[80735:90b] Unlimited access to network resources
+2014-08-14 13:40:06.278 tubemobile[80735:90b] [CDVTimer][keyboard] 0.115991ms
+2014-08-14 13:40:06.279 tubemobile[80735:90b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-08-14 13:40:06.280 tubemobile[80735:90b] [CDVTimer][statusbar] 0.901997ms
+2014-08-14 13:40:06.281 tubemobile[80735:90b] [CDVTimer][TotalPluginStartup] 2.425015ms
+2014-08-14 13:40:06.567 tubemobile[80735:90b] Resetting plugins due to page load.
+2014-08-14 13:40:06.891 tubemobile[80735:90b] Finished load of: file:///Users/jeff.zhan/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/BE5B9751-7687-4143-91B0-B3C93B3FF255/tubemobile.app/www/index.html#/tab/dash
+2014-08-14 14:08:23.388 tubemobile[83089:90b] Multi-tasking -> Device: YES, App: YES
+2014-08-14 14:08:23.396 tubemobile[83089:90b] Unlimited access to network resources
+2014-08-14 14:08:23.416 tubemobile[83089:90b] [CDVTimer][keyboard] 0.057995ms
+2014-08-14 14:08:23.416 tubemobile[83089:90b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-08-14 14:08:23.417 tubemobile[83089:90b] [CDVTimer][statusbar] 0.553012ms
+2014-08-14 14:08:23.417 tubemobile[83089:90b] [CDVTimer][TotalPluginStartup] 1.996994ms
+2014-08-14 14:08:23.532 tubemobile[83089:90b] Resetting plugins due to page load.
+2014-08-14 14:08:23.689 tubemobile[83089:90b] Finished load of: file:///Users/jeff.zhan/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/BE5B9751-7687-4143-91B0-B3C93B3FF255/tubemobile.app/www/index.html#/tab/dash
+2014-08-14 14:10:57.462 tubemobile[83372:90b] Multi-tasking -> Device: YES, App: YES
+2014-08-14 14:10:57.488 tubemobile[83372:90b] Unlimited access to network resources
+2014-08-14 14:10:57.791 tubemobile[83372:90b] [CDVTimer][keyboard] 0.111997ms
+2014-08-14 14:10:57.793 tubemobile[83372:90b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-08-14 14:10:57.794 tubemobile[83372:90b] [CDVTimer][statusbar] 1.060009ms
+2014-08-14 14:10:57.799 tubemobile[83372:90b] [CDVTimer][TotalPluginStartup] 8.961976ms
+2014-08-14 14:10:58.070 tubemobile[83372:90b] Resetting plugins due to page load.
+2014-08-14 14:10:58.408 tubemobile[83372:90b] Finished load of: file:///Users/jeff.zhan/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/BE5B9751-7687-4143-91B0-B3C93B3FF255/tubemobile.app/www/index.html#/tab/dash
