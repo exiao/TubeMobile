@@ -53,7 +53,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
                 controller: 'campaigns_detail_controller'
             }
         }
-      }
     })
 
     .state('login', {
