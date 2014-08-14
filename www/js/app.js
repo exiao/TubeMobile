@@ -36,43 +36,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       templateUrl: "templates/tabs.html"
     })
 
-    // Each tab has its own nav history stack:
-
-    .state('tab.dash', {
-      url: '/dash',
+    .state('tab.campaigns', {
+      url: '/campaigns',
       views: {
-        'tab-dash': {
-          templateUrl: 'templates/tab-dash.html',
-          controller: 'DashCtrl'
+        'tab-campaigns': {
+          templateUrl: 'templates/tab-campaigns.html',
+          controller: 'campaigns_controller'
         }
       }
     })
-
-    .state('tab.friends', {
-      url: '/friends',
+    .state('tab.campaign-detail', {
+      url: '/campaigns/:campaignId',
       views: {
-        'tab-friends': {
-          templateUrl: 'templates/tab-friends.html',
-          controller: 'FriendsCtrl'
-        }
-      }
-    })
-    .state('tab.friend-detail', {
-      url: '/friend/:friendId',
-      views: {
-        'tab-friends': {
-          templateUrl: 'templates/friend-detail.html',
-          controller: 'FriendDetailCtrl'
-        }
-      }
-    })
-
-    .state('tab.account', {
-      url: '/account',
-      views: {
-        'tab-account': {
-          templateUrl: 'templates/tab-account.html',
-          controller: 'AccountCtrl'
+        'tab-campaigns': {
+          templateUrl: 'templates/campaigns-detail.html',
+          controller: 'campaigns_detail_controller'
         }
       }
     })
