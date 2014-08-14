@@ -1,18 +1,22 @@
-<div id="example-forms" class="ionic-body active-preview">
-    <div class="bar bar-header">
-        <div class="h1 title">Forms</div>
-    </div>
-    <div class="content has-header">
+<ion-view title="Sign-In">
+    <ion-content>
         <div class="list">
             <label class="item item-input">
-                <input type="text" placeholder="First Name">
+                <span class="input-label">Username</span>
+                <input type="text" ng-model="user.username">
             </label>
             <label class="item item-input">
-                <input type="text" placeholder="Last Name">
+                <span class="input-label">Password</span>
+                <input type="password" ng-model="user.password">
             </label>
         </div>
         <div class="padding">
-            <button class="button button-block button-positive">Submit</button>
+            <button class="button button-block button-positive" ng-click="signIn(user)">
+                Sign-In
+            </button>
+            <p class="text-center">
+                <a href="#/forgot-password">Forgot password</a>
+            </p>
         </div>
-    </div>
-</div>
+    </ion-content>
+</ion-view>
