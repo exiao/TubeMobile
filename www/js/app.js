@@ -35,23 +35,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         abstract: true,
         templateUrl: "templates/tabs.html"
     })
-
     .state('tab.campaigns', {
-        url: '/campaigns',
-        views: {
-            'tab-campaigns': {
-                templateUrl: 'templates/tab-campaigns.html',
-                controller: 'campaigns_controller'
-            }
+      url: '/campaigns',
+      views: {
+        'tab-campaigns': {
+          templateUrl: 'templates/tab-campaigns.html',
+          controller: 'CampaignsCtrl'
         }
+      }
     })
     .state('tab.campaign-detail', {
-        url: '/campaigns/:campaignId',
-        views: {
-            'tab-campaigns': {
-                templateUrl: 'templates/campaigns-detail.html',
-                controller: 'campaigns_detail_controller'
-            }
+      url: '/campaigns/:campaignId',
+      views: {
+        'tab-campaigns': {
+          templateUrl: 'templates/campaigns-detail.html',
+          controller: 'CampaignsDetailCtrl'
         }
     })
 
