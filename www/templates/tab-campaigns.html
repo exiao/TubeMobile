@@ -1,4 +1,7 @@
 <ion-view title="Campaigns">
+    <ion-nav-bar>
+        <a href="#" class="add-campaign ion-plus"></a>
+    </ion-nav-bar>
     <ion-content class="has-header padding">
         <ion-list>
             <ion-item ng-repeat="campaign in campaigns" type="item-text-wrap" href="#/tab/campaigns/{{campaign.id}}">
