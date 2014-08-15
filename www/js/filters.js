@@ -2,7 +2,7 @@ angular.module('starter.filters', [])
 
 .filter('formatPercent', function() {
     return function(value) {
-    	return parseInt(value)+'%';
+    	return parseFloat(Math.round(value*100)/100)+'%';
     }
 })
 .filter('formatNumberCommas', function() {
