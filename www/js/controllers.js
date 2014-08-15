@@ -75,13 +75,9 @@ angular.module('starter.controllers', [])
     }
 })
 
-<<<<<<< HEAD
-.controller('PlacementsDetailCtrl', function($scope, $stateParams, Placements, DateState) {
+.controller('PlacementsDetailCtrl', function($scope, $stateParams, Placements, DateState $location) {
     Placements.get($stateParams.campaignKey, $stateParams.placementId, DateState.get().start, DateState.get().end).then(function(data) {
-=======
-.controller('PlacementsDetailCtrl', function($scope, $stateParams, Placements, DateState, $location) {
-    Placements.get($stateParams.campaignKey, $stateParams.placementId).then(function(data) {
->>>>>>> ceafc91c8f3bebf98b8eb948d6fa7d2c25fbbc62
+
         $scope.click_rate = data.response.ctr;
         $scope.completion_rate = data.response.pct_completions_100;
         $scope.placement = data.response.details.entry;
