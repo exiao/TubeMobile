@@ -11,8 +11,9 @@ angular.module('starter.controllers', [])
 })
 
 .controller('CampaignsDetailCtrl', function($scope, $stateParams, $http, Campaigns, Placements) {
+    console.log($stateParams.campaignId);
     $scope.campaign = Campaigns.get($stateParams.campaignId);
-    $scope.placements = Placements.all_by_username('justin.sung@tubemogul.com');
+    $scope.placements = Placements.all_by_campaign($scope.campaign.campaign_key);
     $scope.init = function() {
     	$scope.campaign_details = $scope.getCampaignDetail($scope.campaign.campaign_placement_key);
     }
@@ -49,5 +50,4 @@ angular.module('starter.controllers', [])
 
 .controller('DatePickerCtrl', function($scope) {
 
-})
-;
+});

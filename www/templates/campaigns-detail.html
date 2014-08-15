@@ -1,5 +1,5 @@
-<!-- TODO: why does the title not show? -->
-<ion-view title="{{campaign.name}}">
+
+<ion-view title="{{campaign.campaign_name}}">
     <ion-content has-header="true" padding="true">
         <ion-list>
   			<div class="item item-divider">
@@ -24,7 +24,7 @@
   			</div>
             <ion-item class="placement" ng-repeat="placement in placements" type="item-text-wrap"href="#/tab/placements/{{placement.id}}">
             	<div class="placement-error-dot" ng-show="isError(placement.status)"></div>
-                <div class="placement-name">{{placement.name}}</div>
+                <div class="placement-name">{{placement.campaign_placement_name}}</div>
             </ion-item>
         </ion-list>
     </ion-content>
