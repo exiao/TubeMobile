@@ -1,28 +1,24 @@
 <ion-view title="{{campaign.campaign_name}}">
-    <ion-content has-header="true" padding="true">
-        <div ng-include src="'templates/partials/_date-picker.html'"></div>
+    <ion-content has-header="true">
+    	<div class="date-header">
+    		12 June 2014 - 21 August 2014
+		</div>
         <ion-list>
-  			<div class="item item-divider">
-    			Campaign Details
-  			</div>
-            <ion-item>
-            	<div class="row details-header">
-  					<div class="col col-50">Impressions</div>
-  					<div class="col col-50">Completion Rate</div>
-  				</div>
-            	<div class="row">
-  					<div class="col col-50">{{campaign_details.impressions | formatNumberCommas}}</div>
-  					<div class="col col-50">{{campaign_details.completion_rate | formatPercent}}</div>
-  				</div>
-  				<div class="details-header-divider"></div>
-            	<div class="row details-header">
-  					<div class="col col-50">Click Rate</div>
-  					<div class="col col-50">Cost</div>
-  				</div>
-            	<div class="row">
-  					<div class="col col-50">{{campaign_details.click_rate | formatPercent}}</div>
-  					<div class="col col-50">{{campaign_details.cost | formatPrice}}</div>
-  				</div>
+            <ion-item class="row row-padded">
+				<div class="col col-50">Impressions</div>
+				<div class="col col-50 right">{{campaign_details.impressions | formatNumberCommas}}</div>
+        	</ion-item>
+            <ion-item class="row row-padded">
+				<div class="col col-50">Completion Rate</div>
+				<div class="col col-50 right">{{campaign_details.completion_rate | formatPercent}}</div>
+        	</ion-item>
+            <ion-item class="row row-padded">
+				<div class="col col-50">Click Rate</div>
+				<div class="col col-50 right">{{campaign_details.click_rate | formatPercent}}</div>
+        	</ion-item>
+            <ion-item class="row row-padded">
+				<div class="col col-50">Cost</div>
+				<div class="col col-50 right">{{campaign_details.cost | formatPrice}}</div>
         	</ion-item>
   			<div class="item item-divider">
     			Placements

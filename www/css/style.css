@@ -8702,10 +8702,81 @@ a.button {
 
 /* Tube Mobile */
 /* General CSS */
+.right {
+  text-align: right; }
+
 .hide-link {
   text-decoration: none; }
 
+.bar.bar-stable {
+  background: #51b1d9; }
+
+.bar.bar-stable .title {
+  color: white;
+  font-size: 12px;
+  text-transform: uppercase; }
+
+.button.button-positive {
+  border: none; }
+
+.button.tm-button-blue {
+  background: #4faed4;
+  color: white;
+  font-size: 14px;
+  text-transform: uppercase; }
+
+.button.tm-button-blue:active {
+  background: #79c2df; }
+
+.row-padded,
+.row + .row.row-padded {
+  padding: 20px 25px; }
+
 /* Login */
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg); }
+
+  to {
+    -webkit-transform: rotate(360deg); } }
+.loading {
+  background: white;
+  opacity: 0;
+  position: fixed;
+  -moz-transition: 1s;
+  -webkit-transition: 1s;
+  transition: 1s;
+  height: 100%;
+  width: 100%;
+  z-index: 99999999; }
+
+.loading.active {
+  -moz-transition: 1s;
+  -webkit-transition: 1s;
+  transition: 1s;
+  opacity: 1; }
+
+.loading-icon {
+  -webkit-animation-name: rotate;
+  -webkit-animation-duration: .8s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  position: fixed;
+  height: 80px;
+  width: 80px;
+  top: 50%;
+  left: 50%;
+  margin: -40px 0 0 -40px; }
+
+.loading-text {
+  color: #777;
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  top: 50%;
+  text-transform: uppercase;
+  margin-top: 40px; }
+
 .logo {
   display: block;
   margin: 15px auto 0;
@@ -8753,6 +8824,13 @@ a.button {
 
 .details-header-divider {
   height: 10px; }
+
+.date-header {
+  color: #777;
+  font-size: 12px;
+  padding: 7px 0;
+  text-align: center;
+  width: 100%; }
 
 .add-campaign {
   position: absolute;
