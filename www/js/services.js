@@ -1,7 +1,8 @@
 angular.module('starter.services', [])
 
-.factory('Campaigns', function() {
+.factory('Campaigns', function($http) {
     // FIXME: Replace with API call
+    var api_host = 'http://172.16.131.105:8080';
     var campaigns = [
         {
             'campaign_id' : 15,
@@ -77,8 +78,15 @@ angular.module('starter.services', [])
     ];
 
     return {
-        all: function() {
-            return campaigns;
+        all: function(email) {
+	    	$http({
+	    			method: 'GET',
+	    			url: api_host+'/email/'+email,
+	    		})
+	    		.success(function(data) {
+	    			return data;
+	    		});
+
         },
         get: function(id) {
             var campaign =  campaigns.filter(function(campaign) {

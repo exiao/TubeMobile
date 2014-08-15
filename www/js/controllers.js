@@ -7,13 +7,12 @@ angular.module('starter.controllers', [])
 })
 
 .controller('CampaignsCtrl', function($scope, Campaigns) {
-    $scope.campaigns = Campaigns.all();
-        console.log($scope.campaigns);
+    $scope.campaigns = Campaigns.all('stanley.ng@themig.com');
 
     // Divide campaigns into 3 sets
     var setSize = $scope.campaigns.length > 3 ? $scope.campaigns.length / 3 : 3;
     $scope.myCampaigns = $scope.campaigns.slice(0, setSize);
-        console.log($scope.myCampaigns);
+    console.log($scope.myCampaigns);
     $scope.testsCampaigns = $scope.campaigns.slice(setSize, setSize*2);
     $scope.ticklesCampaigns = $scope.campaigns.slice(setSize*2, setSize*3);
 })
