@@ -52,6 +52,9 @@ angular.module('starter.controllers', [])
     });
 })
 
-.controller('DatePickerCtrl', function($scope) {
-
+.controller('DatePickerCtrl', function($scope, $ionicNavBarDelegate) {
+    $scope.goBack = function() {
+        console.log('i ran');
+        $ionicNavBarDelegate.back();
+    };
 });

@@ -9,6 +9,13 @@
   }
 }
 
+.back-button {
+  color: white;
+  &:before {
+    color: white;
+  }
+}
+
 .ion-plus {
   @extend .header-icon;
 }
