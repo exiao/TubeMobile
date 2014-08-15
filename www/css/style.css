@@ -8840,6 +8840,14 @@ a.button {
 .add-campaign:before {
   color: black;
   height: 25px;
-  font-size: 24px; }
+  font-size: 24px;
+  height: 10px; }
+
+.header-icon, .ion-plus, .ion-calendar {
+  position: absolute;
+  right: 1%; }
+  .header-icon:before, .ion-plus:before, .ion-calendar:before {
+    color: black;
+    font-size: 24px; }
 
 /*# sourceMappingURL=style.css.map */

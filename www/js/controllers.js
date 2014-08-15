@@ -23,7 +23,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('CampaignsCtrl', function($scope, Campaigns) {
-    Campaigns.all('stanley.ng@themig.com').then(function(data) {
+    Campaigns.all('rtb_tests@tubemogul.com').then(function(data) {
     	$scope.campaigns = data;
 	    // Divide campaigns into 3 sets
 	    var setSize = $scope.campaigns.length > 3 ? $scope.campaigns.length / 3 : 3;
@@ -33,22 +33,21 @@ angular.module('starter.controllers', [])
 })
 
 .controller('CampaignsDetailCtrl', function($scope, $stateParams, $http, Campaigns, Placements) {
-    console.log($stateParams.campaignId);
-    $scope.campaign = Campaigns.get($stateParams.campaignId);
-    $scope.placements = Placements.all_by_campaign($scope.campaign.campaign_key);
-    $scope.init = function() {
-    	$scope.campaign_details = Campaigns.getDetails($scope.campaign.campaign_key);
-    }
-    $scope.isError = function(status) {
-    	return status === 'error';
-    }
-    $scope.init();
+    Campaigns.all('rtb_tests@tubemogul.com').then(function(data) {
+        $scope.campaign = data[0];
+        $scope.campaign.campaign_key = 'U99AkIDItAJ6KupW4cDF';
+        Campaigns.get($scope.campaign.campaign_key).then(function(data) {
+            $scope.cost = data.response.cost;
+            $scope.impressions = data.response.impressions;
+            $scope.placements = data.response.details.entry;
+        });
+    });
 })
 
 .controller('PlacementsDetailCtrl', function($scope, $stateParams, Placements) {
-    $scope.placement = Placements.get($stateParams.placementId);
-    $scope.init = function() {
-    	$scope.placement_details = Placements.getDetails($scope.placement.campaign_placement_key);
-    }
-    $scope.init();
+    Placements.get($stateParams.campaignKey, $stateParams.placementId).then(function(data) {
+        $scope.placement = data.response.details.entry;
+        $scope.cost = $scope.placement.cost;
+        $scope.impressions = $scope.placement.impressions;
+    });
 });

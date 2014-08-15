@@ -1,0 +1,17 @@
+.header-icon {
+  position: absolute;
+  right: 1%;
+
+  &:before {
+    color: black;
+    font-size: 24px;
+  }
+}
+
+.ion-plus {
+  @extend .header-icon;
+}
+
+.ion-calendar {
+  @extend .header-icon;
+}
