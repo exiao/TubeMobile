@@ -7,8 +7,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('CampaignsCtrl', function($scope, Campaigns) {
-    var campaigns = Campaigns.all('stanley.ng@themig.com');
-    campaigns.then(function(data) {
+    Campaigns.all('stanley.ng@themig.com').then(function(data) {
     	$scope.campaigns = data;
 	    // Divide campaigns into 3 sets
 	    var setSize = $scope.campaigns.length > 3 ? $scope.campaigns.length / 3 : 3;
