@@ -13,8 +13,11 @@
 .login-label {
   color: #555;
   font-size: 14px;
-  padding-right: 15px;
 }
 .login-button {
   font-weight: 700;
+}
+.login-username input,
+.login-password input {
+	padding-left: 25px;
 }
