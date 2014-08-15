@@ -8,28 +8,19 @@
             <ion-item>
             	<div class="row details-header">
   					<div class="col col-50">Impressions</div>
-  					<div class="col col-50">Completion Rate</div>
-  				</div>
-            	<div class="row">
-  					<div class="col col-50">{{campaign_details.impressions | formatNumberCommas}}</div>
-  					<div class="col col-50">{{campaign_details.completion_rate | formatPercent}}</div>
-  				</div>
-  				<div class="details-header-divider"></div>
-            	<div class="row details-header">
-  					<div class="col col-50">Click Rate</div>
   					<div class="col col-50">Cost</div>
   				</div>
             	<div class="row">
-  					<div class="col col-50">{{campaign_details.click_rate | formatPercent}}</div>
-  					<div class="col col-50">{{campaign_details.cost | formatPrice}}</div>
+  					<div class="col col-50">{{impressions | formatNumberCommas}}</div>
+  					<div class="col col-50">{{cost | formatPrice}}</div>
   				</div>
         	</ion-item>
   			<div class="item item-divider">
     			Placements
   			</div>
-            <ion-item class="placement" ng-repeat="placement in placements" type="item-text-wrap"href="#/tab/placements/{{placement.id}}">
+            <ion-item class="placement" ng-repeat="placement in placements" type="item-text-wrap"href="#/tab/campaigns/{{campaign.campaign_key}}/placements/{{placement.placement_id}}">
             	<div class="placement-error-dot" ng-show="isError(placement.status)"></div>
-                <div class="placement-name">{{placement.campaign_placement_name}}</div>
+                <div class="placement-name">{{placement.placement_name}}</div>
             </ion-item>
         </ion-list>
     </ion-content>

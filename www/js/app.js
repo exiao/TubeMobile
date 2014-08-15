@@ -47,7 +47,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         }
     })
     .state('tab.campaign-detail', {
-        url: '/campaigns/:campaignId',
+        url: '/campaigns/:campaignKey',
             views: {
                 'tab-campaigns': {
                 templateUrl: 'templates/campaigns-detail.html',
@@ -56,7 +56,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         }
     })
     .state('tab.placement-detail', {
-        url: '/placements/:placementId',
+        url: '/campaigns/:campaignKey/placements/:placementId',
             views: {
                 'tab-campaigns': {
                 templateUrl: 'templates/placements-detail.html',
