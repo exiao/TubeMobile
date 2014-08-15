@@ -75,7 +75,7 @@ angular.module('starter.controllers', [])
     }
 })
 
-.controller('PlacementsDetailCtrl', function($scope, $stateParams, Placements, DateState $location) {
+.controller('PlacementsDetailCtrl', function($scope, $stateParams, Placements, DateState, $location) {
     Placements.get($stateParams.campaignKey, $stateParams.placementId, DateState.get().start, DateState.get().end).then(function(data) {
 
         $scope.click_rate = data.response.ctr;
