@@ -320,12 +320,12 @@ angular.module('starter.services', [])
 
 .factory('Placements', function() {
     var placements = [
-        {id: 0, campaign_id: 0, username:'justin.sung@tubemogul.com', name:'placement0'},
-        {id: 1, campaign_id: 0, username:'justin.sung@tubemogul.com', name:'placement1'},
-        {id: 2, campaign_id: 1, username:'justin.sung@tubemogul.com', name:'placement2'},
-        {id: 3, campaign_id: 1, username:'justin.sung@tubemogul.com', name:'placement3'},
-        {id: 4, campaign_id: 2, username:'jeff.zhan@tubemogul.com', name:'placement4'},
-        {id: 5, campaign_id: 2, username:'jeff.zhan@tubemogul.com', name:'placement5'}
+        {id: 0, campaign_id: 0, username:'justin.sung@tubemogul.com', name:'Placement 0', status: 'error'},
+        {id: 1, campaign_id: 0, username:'justin.sung@tubemogul.com', name:'Placement 1', status: 'good'},
+        {id: 2, campaign_id: 1, username:'justin.sung@tubemogul.com', name:'Placement 2', status: 'good'},
+        {id: 3, campaign_id: 1, username:'justin.sung@tubemogul.com', name:'Placement 3', status: 'good'},
+        {id: 4, campaign_id: 2, username:'jeff.zhan@tubemogul.com', name:'Placement 4', status: 'error'},
+        {id: 5, campaign_id: 2, username:'jeff.zhan@tubemogul.com', name:'Placement 5', status: 'good'}
     ];
     
     return {

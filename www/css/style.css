@@ -4,7 +4,7 @@
 	text-decoration: none;
 }
 
-/* Component CSS */
+/* Login */
 .logo {
     display: block;
     margin: 20px auto 0;
@@ -23,4 +23,24 @@
 }
 .login-button {
 	font-weight: 700;
+}
+
+/* Campaigns and Placements */
+.placement {
+	position: relative;
+}
+.placement-name {
+	padding-left: 20px;
+}
+.placement-error-dot {
+	background-color: #b267a2;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	display: inline-block;
+	height: 8px;
+	position: absolute;
+	left: 17px;
+	top: 23px;
+	width: 8px;
 }
