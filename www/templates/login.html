@@ -1,23 +1,24 @@
 <ion-view title="Sign-In">
     <ion-content>
-        <img class="logo" src="img/logo.svg">
+        <img class="logo" src="img/logo.png">
+        <img class="logo-name" src="img/logo_name.png">
         <div class="list">
             <label class="item item-input">
-                <span class="input-label">Username</span>
+                <span class="login-label">Username</span>
                 <input type="text" ng-model="user.username">
             </label>
             <label class="item item-input">
-                <span class="input-label">Password</span>
+                <span class="login-label">Password</span>
                 <input type="password" ng-model="user.password">
             </label>
         </div>
-        <div class="padding">
-            <button class="button button-block button-positive" ng-click="signIn(user)">
-                Sign-In
+        <button class="login-button button button-block button-positive" ng-click="signIn(user)">
+            Sign-In
+        </button>
+        <a href="#/forgot-password" class="hide-link">
+            <button class="login-button button button-block button-positive">
+                Forgot Password
             </button>
-            <p class="text-center">
-                <a href="#/forgot-password">Forgot password</a>
-            </p>
-        </div>
+        </a>
     </ion-content>
 </ion-view>
