@@ -1,5 +1,9 @@
 angular.module('starter.services', [])
 
+.factory('Notification', function($http, $q) {
+    // FIXME: Replace with API call
+
+})
 .factory('Campaigns', function($http, $q) {
     var api_host = 'http://172.16.131.105:8080';
 

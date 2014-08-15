@@ -1,9 +1,25 @@
 angular.module('starter.controllers', [])
 
-.controller('LoginCtrl', function($scope, $location) {
+.controller('LoginCtrl', function($scope, $location, $timeout) {
+	$scope.loadingScreen = function() {
+		$scope.overlay_on = true;
+		var endOverlay = function() {
+			$scope.overlay_on = false;
+		}
+		var endAnimation = function() {
+			$scope.overlay_animate = false;
+			$location.path('/tab/campaigns');
+		}
+		var startAnimation = function() {
+			$scope.overlay_animate = true;
+			$timeout(endAnimation, 3800);
+		}
+		$timeout(startAnimation, 50);
+	}
     $scope.signIn = function(user) {
-        $location.path('/tab/campaigns');
-    };
+    	$scope.loadingScreen();
+        // $location.path('/tab/campaigns');
+    }
 })
 
 .controller('CampaignsCtrl', function($scope, Campaigns) {
@@ -51,4 +67,11 @@ angular.module('starter.controllers', [])
         $scope.cost = $scope.placement.cost / 1000000.0;
         $scope.impressions = $scope.placement.impressions;
     });
+})
+
+.controller('DatePickerCtrl', function($scope, $ionicNavBarDelegate) {
+    $scope.goBack = function() {
+        console.log('i ran');
+        $ionicNavBarDelegate.back();
+    };
 });

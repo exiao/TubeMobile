@@ -1,5 +1,48 @@
 /* Tube Mobile */
 /* General CSS */
+$app-blue-background: #51b1d9;
+$app-gray-background: #BEBEBE;
+
+.right {
+	text-align: right;
+}
 .hide-link {
   text-decoration: none;
+}
+.bar.bar-stable {
+	background: #51b1d9;
+}
+.bar.bar-stable .title {
+	color: white;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+.button.button-positive {
+	border: none;
+}
+.button.tm-button-blue {
+	background: #4faed4;
+	color: white;
+	font-size: 14px;
+	text-transform: uppercase;
+}
+.button.tm-button-blue:active {
+	background: #79c2df;
+}
+.row-padded,
+.row + .row.row-padded {
+	padding: 20px 25px;
+}
+.item-divider {
+	background: #8bd3df;
+	font-size: 13px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	font-weight: normal;
+}
+.ion-ios7-arrow-back.button.back-button {
+	color: white;
+}
+.button-icon.ion-ios7-arrow-back.button.back-button {
+	width: 24px;
 }

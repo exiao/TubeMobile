@@ -1,7 +1,11 @@
+<div class="loading" ng-show="overlay_on" ng-class="{active: overlay_animate}">
+    <img class="loading-icon" src="/img/loading.png">
+    <div class="loading-text">Logging in...</div>
+</div>
 <ion-view title="Sign-In">
     <ion-content padding="true">
-        <img class="logo" src="img/logo.png">
-        <img class="logo-name" src="img/logo_name.png">
+        <img class="logo" src="/img/logo.png">
+        <img class="logo-name" src="/img/logo_name.png">
         <div class="list">
             <label class="item item-input login-username">
                 <span class="login-label">Username</span>
@@ -12,13 +16,8 @@
                 <input type="password" ng-model="user.password">
             </label>
         </div>
-        <button class="login-button button button-block button-positive" ng-click="signIn(user)">
-            Sign-In
+        <button class="login-button button button-block button-positive tm-button-blue" ng-click="signIn(user)">
+            Login
         </button>
-        <a href="#/forgot-password" class="hide-link">
-            <button class="login-button button button-block button-positive">
-                Forgot Password
-            </button>
-        </a>
     </ion-content>
 </ion-view>

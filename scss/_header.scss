@@ -1,0 +1,26 @@
+.header-icon {
+  position: absolute;
+  right: 3%;
+  z-index: 1;
+  top: 9px;
+
+  &:before {
+    color: white;
+    font-size: 24px;
+  }
+}
+
+.back-button {
+  color: white;
+  &:before {
+    color: white;
+  }
+}
+
+.ion-plus {
+  @extend .header-icon;
+}
+
+.ion-calendar {
+  @extend .header-icon;
+}
