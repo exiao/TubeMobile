@@ -7,7 +7,10 @@
   			</div>
             <ion-item>
             	{{campaign.start_time}}
-            	{{campaign.}}
+            	{{campaign_details.impressions}}
+            	{{campaign_details.completion_rate | toPercent}}
+            	{{campaign_details.click_rate | toPercent}}
+            	{{campaign_details.cost}}
         	</ion-item>
   			<div class="item item-divider">
     			Placements
