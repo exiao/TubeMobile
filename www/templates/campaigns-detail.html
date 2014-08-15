@@ -28,7 +28,7 @@
   			</div>
             <ion-item class="placement" ng-repeat="placement in placements" type="item-text-wrap"href="#/tab/campaigns/{{campaign.campaign_key}}/placements/{{placement.placement_id}}">
             	<div class="placement-error-dot" ng-show="isError(placement.status)"></div>
-                <div class="placement-name">{{placement.placement_name}}</div>
+                <div class="placement-name">{{placement.placement_name | limitString: 25}}</div>
             </ion-item>
         </ion-list>
     </ion-content>

@@ -19,7 +19,7 @@ angular.module('starter.controllers', [])
     $scope.signIn = function(user) {
     	$scope.loadingScreen();
         // $location.path('/tab/campaigns');
-    };
+    }
 })
 
 .controller('CampaignsCtrl', function($scope, Campaigns) {

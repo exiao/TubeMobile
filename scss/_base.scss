@@ -30,3 +30,16 @@
 .row + .row.row-padded {
 	padding: 20px 25px;
 }
+.item-divider {
+	background: #8bd3df;
+	font-size: 13px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	font-weight: normal;
+}
+.ion-ios7-arrow-back.button.back-button {
+	color: white;
+}
+.button-icon.ion-ios7-arrow-back.button.back-button {
+	width: 24px;
+}
