@@ -6,17 +6,17 @@
         <div class="date-range">
             <label class="item item-input">
                 <span class="input-label">Start Date</span>
-                <input type="date" value="2014-08-02">
+                <input type="date" ng-model="dateState.start" required>
             </label>
             <label class="item item-input">
                 <span class="input-label">End Date</span>
-                <input type="date" value="2014-09-12">
+                <input type="date" ng-model="dateState.end" required>
             </label>
         </div>
 
-        <div class="picker-buttons">
-            <button id="cancel" ng-click="goBack()">Cancel</button>
-            <button id="save" ng-click="goBack()">Save</button>
+        <div class="picker-buttons row">
+            <button class="col-25 col-offset-25" id="cancel" ng-click="goBack()">Cancel</button>
+            <button class="col-25" id="save" ng-click="updateDateState(dateState.start, dateState.end)">Save</button>
         </div>
     </ion-content>
 </ion-view>

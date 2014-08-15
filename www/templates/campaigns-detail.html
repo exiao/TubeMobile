@@ -4,7 +4,7 @@
     </ion-nav-buttons>
     <ion-content has-header="true">
     	<div class="date-header">
-    		12 June 2014 - 21 August 2014
+            {{dateState.start | date:'dd MMMM yyyy'}} - {{dateState.end | date:'dd MMMM yyyy'}}
 		</div>
         <ion-list>
             <ion-item class="row row-padded">
@@ -30,9 +30,11 @@
   			<div class="item item-divider">
     			Placements
   			</div>
-            <ion-item class="placement" ng-repeat="placement in placements" type="item-text-wrap"href="#/tab/campaigns/{{campaign.campaign_key}}/placements/{{placement.placement_id}}">
+            <ion-item class="placement" ng-show='placements' ng-repeat="placement in placements" type="item-text-wrap" href="#/tab/campaigns/{{campaign.campaign_key}}/placements/{{placement.placement_id}}">
             	<div class="placement-error-dot" ng-show="$index==0 || $index==2"></div>
                 <div class="placement-name trim-string">{{placement.placement_name}}</div>
+            <ion-item class="placement" ng-show='!placements' type="item-text-wrap" >
+                <div class="placement-name">Loading Placements ...</div>
             </ion-item>
         </ion-list>
     </ion-content>

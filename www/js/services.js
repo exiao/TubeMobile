@@ -23,7 +23,7 @@ angular.module('starter.services', [])
         	return deferred.promise;
         },
         get: function(campaign_key) {
-            var deferred = $q.defer(),
+            var deferred = $q.defer()
                 start = '2014-08-02',
                 end = '2014-09-12';
             $http({
@@ -61,5 +61,24 @@ angular.module('starter.services', [])
                 });
             return deferred.promise;
         }
+    }
+})
+
+.factory('DateState', function() {
+    var date = new Date();
+    var currentDate = {
+        start: new Date(date.getFullYear(), date.getMonth(), 1),
+        end: new Date(date.getFullYear(), date.getMonth() + 1, 0)
+    };
+
+    return {
+        get: function() {
+            return currentDate;
+        },
+        set: function(start, end) {
+            currentDate.start = start;
+            currentDate.end = end;
+        }
+
     }
 });

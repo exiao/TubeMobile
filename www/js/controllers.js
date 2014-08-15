@@ -37,7 +37,7 @@ angular.module('starter.controllers', [])
     });
 })
 
-.controller('CampaignsDetailCtrl', function($scope, $stateParams, $http, Campaigns, Placements) {
+.controller('CampaignsDetailCtrl', function($scope, $stateParams, $http, Campaigns, Placements, DateState) {
     Campaigns.all($stateParams.email).then(function(data) {
         $scope.campaign = data[0];
         $scope.campaign.campaign_key = $stateParams.campaignKey;
@@ -56,9 +56,10 @@ angular.module('starter.controllers', [])
         else if ($stateParams.email == 'btacy@doner.com')
             $scope.campaign.campaign_name = '2014 Detroit Zoo Summer Plan';
     });
+    $scope.dateState = DateState.get();
 })
 
-.controller('PlacementsDetailCtrl', function($scope, $stateParams, Placements) {
+.controller('PlacementsDetailCtrl', function($scope, $stateParams, Placements, DateState) {
     Placements.get($stateParams.campaignKey, $stateParams.placementId).then(function(data) {
         $scope.click_rate = data.response.ctr;
         $scope.completion_rate = data.response.pct_completions_100;
@@ -67,11 +68,18 @@ angular.module('starter.controllers', [])
         $scope.cost = $scope.placement.cost / 1000000.0;
         $scope.impressions = $scope.placement.impressions;
     });
+    $scope.dateState = DateState.get();
 })
 
-.controller('DatePickerCtrl', function($scope, $ionicNavBarDelegate) {
+.controller('DatePickerCtrl', function($scope, $ionicNavBarDelegate, DateState) {
     $scope.goBack = function() {
-        console.log('i ran');
         $ionicNavBarDelegate.back();
     };
+
+    $scope.updateDateState = function (start, end) {
+        DateState.set(start, end);
+        $scope.goBack();
+    }
+
+    $scope.dateState = DateState.get();
 });
