@@ -1,4 +1,4 @@
-.icon {
+.header-icon {
   position: absolute;
   right: 1%;
 
@@ -9,9 +9,9 @@
 }
 
 .ion-plus {
-  @extend .icon;
+  @extend .header-icon;
 }
 
 .ion-calendar {
-  @extend .icon;
+  @extend .header-icon;
 }

@@ -65,6 +65,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         }
     })
 
+//      .state('tab.date-picker'), {
+//      url: '/date-picker',
+//      views: {
+//          'tab-date-picker': {
+//              templateUrl: 'templates/tab-date-picker.html',
+//              controller: ''
+//          }
+//      }
+//  }
+
     .state('login', {
         url: '/login',
         controller: 'LoginCtrl',
