@@ -12,7 +12,8 @@ angular.module('starter.controllers', [])
 
 .controller('CampaignsDetailCtrl', function($scope, $stateParams, Campaigns, Placements) {
     $scope.campaign = Campaigns.get($stateParams.campaignId);
-    $scope.placements = Placements.all_by_username('justin.sung@tubemogul.com');
+    console.log($scope.campaign.campaign_key);
+    $scope.placements = Placements.all_by_campaign($scope.campaign.campaign_key);
 })
 
 .controller('PlacementsDetailCtrl', function($scope, $stateParams, Placements) {

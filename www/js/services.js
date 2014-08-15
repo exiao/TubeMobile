@@ -4,6 +4,94 @@ angular.module('starter.services', [])
     // FIXME: Replace with API call
     var campaigns = [
         {
+            'campaign_id' : 15,
+            'campaign_name' : 'Random stuff',
+            'created_on' : '2009-04-23 15:35:21',
+            'modified_on' : '2014-08-05 15:08:37',
+            'account_id' : 1,
+            'user_id' : 900,
+            'deleted' : 'NULL',
+            'campaign_key' : 'U99AkIDItAJ6KupW4cDF',
+            'default_markup_percentage' : 40.000000,
+            'advertiser_id' : 26583,
+            'default_additional_markup_price_per_uom' : 'NULL',
+            'default_additional_markup_uom' : 'NULL',
+            'budget_cap' : 'NULL',
+            'admin_notes' : 'NULL',
+            'google_ad_group_id' : 'NULL',
+            'rate_card_id' : 689,
+            'timezone' : 'America/New_York',
+            'nielsen_id' : 'NULL',
+            'nielsen_campaign_id' : 'NULL',
+            'use_dst' : 'T',
+            'nielsen_gender' : 'both',
+            'nielsen_target_start_age' : 2,
+            'nielsen_target_end_age' : 999,
+            'nielsen_activated' : 'F',
+            'is_managed' : 'T',
+            'nielsen_grp_activated' : 'F',
+            'campaign_type' : 'media',
+            'parent_campaign_id' : 'NULL',
+            'frequency_cap' : 'NULL',
+            'frequency_cap_interval' : 'NULL',
+            'nielsen_geos' : 'US',
+            'is_viewability' : 'F',
+            'billing_type' : 'Testing',
+            'billing_data_to_use' : 'tpas'
+        }, {
+            'campaign_id' : 16,
+            'campaign_name' : 'Tubemogul/stokaace',
+            'created_on' : '2009-04-23 15:35:21',
+            'modified_on' : '2014-07-10 19:48:45',
+            'account_id' : 1,
+            'user_id' : 900,
+            'deleted' : 'NULL',
+            'campaign_key' : 'aP4VOVZyBCY3WUxHhjc5',
+            'default_markup_percentage' : 20.000000,
+            'advertiser_id' : 309,
+            'default_additional_markup_price_per_uom' : 'NULL',
+            'default_additional_markup_uom' : 'NULL',
+            'budget_cap' : 'NULL',
+            'admin_notes' : 'NULL',
+            'google_ad_group_id' : 'NULL',
+            'rate_card_id' : 691,
+            'timezone' : 'America/New_York',
+            'nielsen_id' : 'NULL',
+            'nielsen_campaign_id' : 'NULL',
+            'use_dst' : 'T',
+            'nielsen_gender' : 'both',
+            'nielsen_target_start_age' : 2,
+            'nielsen_target_end_age' : 999,
+            'nielsen_activated' : 'F',
+            'is_managed' : 'T',
+            'nielsen_grp_activated' : 'F',
+            'campaign_type' : 'media',
+            'parent_campaign_id' : 'NULL',
+            'frequency_cap' : 'NULL',
+            'frequency_cap_interval' : 'NULL',
+            'nielsen_geos' : 'US',
+            'is_viewability' : 'F',
+            'billing_type' : 'Testing',
+            'billing_data_to_use' : 'tpas'
+        }
+    ];
+
+    return {
+        all: function() {
+            return campaigns;
+        },
+        get: function(id) {
+            var campaign =  campaigns.filter(function(campaign) {
+                return campaign.campaign_id == id;
+            });
+            return campaigns[0];
+        }
+    }
+})
+
+.factory('Placements', function() {
+    var placements = [
+        {
             "campaign_placement_id":1,
             "campaign_placement_key":"YFk8RnlYHwnG4KbFSQor",
             "campaign_key":"U99AkIDItAJ6KupW4cDF",
@@ -305,37 +393,19 @@ angular.module('starter.services', [])
             "is_brandaccess":"F"
         }
     ];
-
-    return {
-        all: function() {
-            return campaigns;
-        },
-        get: function(id) {
-            return campaigns.filter(function(campaign) {
-                return campaign.campaign_placement_id == id;
-            });
-        }
-    }
-})
-
-.factory('Placements', function() {
-    var placements = [
-        {id: 0, campaign_id: 0, username:'justin.sung@tubemogul.com', name:'placement0'},
-        {id: 1, campaign_id: 0, username:'justin.sung@tubemogul.com', name:'placement1'},
-        {id: 2, campaign_id: 1, username:'justin.sung@tubemogul.com', name:'placement2'},
-        {id: 3, campaign_id: 1, username:'justin.sung@tubemogul.com', name:'placement3'},
-        {id: 4, campaign_id: 2, username:'jeff.zhan@tubemogul.com', name:'placement4'},
-        {id: 5, campaign_id: 2, username:'jeff.zhan@tubemogul.com', name:'placement5'}
-    ];
     
     return {
-        all_by_username: function(username) {
+        all_by_campaign: function(campaign_key) {
             return placements.filter(function(placement) {
-                return placement.username == username;
+                console.log(placement.campaign_key == campaign_key);
+                return placement.campaign_key == campaign_key;
             });
         },
         get: function(id) {
-            return placements[id];
+            var placement = placements.filter(function(placement) {
+                return placement.campaign_placement_id == id;
+            })
+            return placements[0];
         }
     }
 })
