@@ -47,7 +47,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         }
     })
     .state('tab.campaign-detail', {
-        url: '/campaigns/:campaignKey',
+        url: '/campaigns/:email/:campaignKey',
             views: {
                 'tab-campaigns': {
                 templateUrl: 'templates/campaigns-detail.html',

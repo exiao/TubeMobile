@@ -5,24 +5,26 @@
     <ion-content class="has-header padding">
         <div ng-include src="'templates/partials/_date-picker.html'"></div>
         <ion-list>
-            <!-- TODO: Campaigns are hard coded to be divided into 3 sets -->
-            <!-- Current user's campaigns -->
+            <ion-item class="item-divider">cadreon.us@tubemogul.com</ion-item>
+            <ion-item ng-repeat="campaign in cadreon_campaigns" type="item-text-wrap" href="#/tab/campaigns/cadreon.us@tubemogul.com/ak0Y3lt4lr2RacUNYH03">
+                2014 Johnson's Baby NMT Video
+            </ion-item>
+            
+            <ion-item class="item-divider">accuen.us@tubemogul.com</ion-item>
+            <ion-item ng-repeat="campaign in accuen_campaigns" type="item-text-wrap" href="#/tab/campaigns/accuen.us@tubemogul.com/fn4fUF1wLGN7D5YX3vqX">
+                Mitsubishi Q2 Upper Funnel 2014
+            </ion-item>
+            
+            <ion-item class="item-divider">btacy@doner.com</ion-item>
+            <ion-item ng-repeat="campaign in btacy_campaigns" type="item-text-wrap" href="#/tab/campaigns/btacy@doner.com/geLeRHA85447IMxdZh8E">
+                2014 Detroit Zoo Summer Plan
+            </ion-item>
+            
             <ion-item class="item-divider">rtb_tests@tubemogul.com</ion-item>
-            <ion-item ng-repeat="campaign in campaigns" type="item-text-wrap" href="#/tab/campaigns/{{campaign.campaign_key}}">
+            <ion-item ng-repeat="campaign in rtb_tests_campaigns" type="item-text-wrap" href="#/tab/campaigns/rtb_tests@tubemogul.com/U99AkIDItAJ6KupW4cDF">
                 {{campaign.campaign_name}}
             </ion-item>
-
-            <!-- Test's campaigns -->
-            <ion-item ng-if="testsCampaigns" class="item-divider">test@tubemogul.com</ion-item>
-            <ion-item ng-repeat="campaign in testsCampaigns" type="item-text-wrap" href="#/tab/campaigns/{{campaign.campaign_key}}">
-                {{campaign.campaign_name}}
-            </ion-item>
-
-            <!-- Tickle's campaigns -->
-            <ion-item ng-if="ticklesCampaigns" class="item-divider">tickle@tubemogul.com</ion-item>
-            <ion-item ng-repeat="campaign in ticklesCampaigns" type="item-text-wrap" href="#/tab/campaigns/{{campaign.campaign_key}}">
-                {{campaign.campaign_name}}
-            </ion-item>
+           
         </ion-list>
     </ion-content>
 </ion-view>

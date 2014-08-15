@@ -12,6 +12,6 @@ angular.module('starter.filters', [])
 })
 .filter('formatPrice', function() {
     return function(value) {
-    	return '$'+value;
+    	return '$' + Math.round(value*100)/100;
     }
 });

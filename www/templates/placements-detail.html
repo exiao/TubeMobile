@@ -11,9 +11,17 @@
   					<div class="col col-50">Cost</div>
   				</div>
             	<div class="row">
-  					<div class="col col-50">{{placement.impressions | formatNumberCommas}}</div>
-  					<div class="col col-50">{{placement.cost | formatPrice}}</div>
+  					<div class="col col-50">{{impressions | formatNumberCommas}}</div>
+  					<div class="col col-50">{{cost | formatPrice}}</div>
   				</div>
+                <div class="row details-header">
+                    <div class="col col-50">Click Rate</div>
+                    <div class="col col-50">Completion Rate</div>
+                </div>
+                <div class="row">
+                    <div class="col col-50">{{click_rate | formatPercent}}</div>
+                    <div class="col col-50">{{completion_rate | formatPercent}}</div>
+                </div>
         	</ion-item>
         </ion-list>
     </ion-content>
