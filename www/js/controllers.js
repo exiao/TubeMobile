@@ -23,37 +23,20 @@ angular.module('starter.controllers', [])
     $scope.campaign = Campaigns.get($stateParams.campaignId);
     $scope.placements = Placements.all_by_campaign($scope.campaign.campaign_key);
     $scope.init = function() {
-    	$scope.campaign_details = $scope.getCampaignDetail($scope.campaign.campaign_placement_key);
+    	$scope.campaign_details = Campaigns.getDetails($scope.campaign.campaign_key);
     }
     $scope.isError = function(status) {
     	return status === 'error';
-    }
-    $scope.getCampaignDetail = function(key) {
-    	/* TODO: Use Stats API to get campaign details */
-    	var data = {
-    		impressions: 100000,
-    		completion_rate: .85,
-    		click_rate: 1.25,
-    		cost: 1000
-    	}
-    	return data;
-    	/*
-    	$http({
-    			method: 'GET',
-    			url: '',
-    			data: {campaign_key: key}
-    		})
-    		.success(function(data) {
-    			console.log(data);
-    			$scope.current_campaign = data;
-    		});
-		*/
     }
     $scope.init();
 })
 
 .controller('PlacementsDetailCtrl', function($scope, $stateParams, Placements) {
     $scope.placement = Placements.get($stateParams.placementId);
+    $scope.init = function() {
+    	$scope.placement_details = Placements.getDetails($scope.placement.campaign_placement_key);
+    }
+    $scope.init();
 })
 
 .controller('DatePickerCtrl', function($scope) {

@@ -1,7 +1,17 @@
 angular.module('starter.filters', [])
 
-.filter('toPercent', function() {
+.filter('formatPercent', function() {
     return function(value) {
-    	return value*100+'%';
+    	return parseInt(value)+'%';
+    }
+})
+.filter('formatNumberCommas', function() {
+    return function(value) {
+    	return value.toString().replace(/,/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    }
+})
+.filter('formatPrice', function() {
+    return function(value) {
+    	return '$'+value;
     }
 });

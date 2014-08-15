@@ -54,3 +54,11 @@
 	top: 23px;
 	width: 8px;
 }
+.details-header .col {
+	font-size: 12px;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+.details-header-divider {
+	height: 10px;
+}
