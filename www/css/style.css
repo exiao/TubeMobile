@@ -18,6 +18,8 @@
 }
 .login-label {
 	color: #555;
+	font-size: 14px;
+	padding-right: 15px;
 }
 .login-button {
 	font-weight: 700;
