@@ -33,11 +33,10 @@ angular.module('starter.services', [])
 	            });
         	return deferred.promise;
         },
-        get: function(campaign_key) {
-            var deferred = $q.defer(),
-                start = '2014-08-01',
-                end = '2014-09-01';
-            $http({
+
+        get: function(campaign_key, start, end) {
+            var deferred = $q.defer();
+	            $http({
                     method: 'GET',
                     url: api_host+'/cp_key/'+campaign_key+'/start/'+start+'/end/'+end,
                 })
@@ -88,10 +87,11 @@ angular.module('starter.services', [])
     var currentRoute = 0;
     
     return {
-        get: function(campaign_key, placement_id) {
-            var deferred = $q.defer(),
-                start = '2014-08-01',
-                end = '2014-09-01';
+
+        get: function(campaign_key, placement_id, start, end) {
+            console.log(start);
+            var deferred = $q.defer();
+
             $http({
                     method: 'GET',
                     url: api_host+'/cp_key/'+campaign_key+'/placement_id/'+placement_id+'/start/'+start+'/end/'+end,

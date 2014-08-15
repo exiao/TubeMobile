@@ -38,7 +38,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('CampaignsDetailCtrl', function($scope, $stateParams, $http, Campaigns, Placements, DateState, $location) {
-    Campaigns.all($stateParams.email).then(function(data) {
+    Campaigns.all($stateParams.email, DateState.get().start, DateState.get().end).then(function(data) {
         $scope.campaign = data[0];
         $scope.campaign.campaign_key = $stateParams.campaignKey;
         
@@ -75,8 +75,9 @@ angular.module('starter.controllers', [])
     }
 })
 
-.controller('PlacementsDetailCtrl', function($scope, $stateParams, Placements, DateState, $location) {
-    Placements.get($stateParams.campaignKey, $stateParams.placementId).then(function(data) {
+.controller('PlacementsDetailCtrl', function($scope, $stateParams, Placements, DateState $location) {
+    Placements.get($stateParams.campaignKey, $stateParams.placementId, DateState.get().start, DateState.get().end).then(function(data) {
+
         $scope.click_rate = data.response.ctr;
         $scope.completion_rate = data.response.pct_completions_100;
         $scope.placement = data.response.details.entry;
