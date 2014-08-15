@@ -34,9 +34,9 @@ angular.module('starter.services', [])
         	return deferred.promise;
         },
         get: function(campaign_key) {
-            var deferred = $q.defer()
-                start = '2014-08-02',
-                end = '2014-09-12';
+            var deferred = $q.defer(),
+                start = '2014-08-01',
+                end = '2014-09-01';
             $http({
                     method: 'GET',
                     url: api_host+'/cp_key/'+campaign_key+'/start/'+start+'/end/'+end,
@@ -90,8 +90,8 @@ angular.module('starter.services', [])
     return {
         get: function(campaign_key, placement_id) {
             var deferred = $q.defer(),
-                start = '2014-08-02',
-                end = '2014-09-12';
+                start = '2014-08-01',
+                end = '2014-09-01';
             $http({
                     method: 'GET',
                     url: api_host+'/cp_key/'+campaign_key+'/placement_id/'+placement_id+'/start/'+start+'/end/'+end,
@@ -140,6 +140,9 @@ angular.module('starter.services', [])
     return {
         get: function() {
             return currentDate;
+        },
+        get_for_api: function() {
+            var start_for_api = start;
         },
         set: function(start, end) {
             currentDate.start = start;
