@@ -12,7 +12,6 @@ angular.module('starter.controllers', [])
     // Divide campaigns into 3 sets
     var setSize = $scope.campaigns.length > 3 ? $scope.campaigns.length / 3 : 3;
     $scope.myCampaigns = $scope.campaigns.slice(0, setSize);
-    console.log($scope.myCampaigns);
     $scope.testsCampaigns = $scope.campaigns.slice(setSize, setSize*2);
     $scope.ticklesCampaigns = $scope.campaigns.slice(setSize*2, setSize*3);
 })
@@ -36,8 +35,4 @@ angular.module('starter.controllers', [])
     	$scope.placement_details = Placements.getDetails($scope.placement.campaign_placement_key);
     }
     $scope.init();
-})
-
-.controller('DatePickerCtrl', function($scope) {
-
 });
