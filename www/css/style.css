@@ -1,8 +1,15 @@
-/* Empty. Add your own CSS if you like */
+/* Tube Mobile */
+/* General CSS */
+.hide-link {
+	text-decoration: none;
+}
+
+/* Login */
 .logo {
     display: block;
-    margin: auto;
+    margin: 20px auto 0;
     padding: 15px 0;
+    width: 150px;
 }
 
 .add-campaign {
@@ -15,4 +22,38 @@
     color: black;
     height: 25px;
     font-size: 24px;
+
+}
+.logo-name {
+	display: block;
+	margin: 0 auto 20px;
+	width: 200px;
+}
+.login-label {
+	color: #555;
+	font-size: 14px;
+	padding-right: 15px;
+}
+.login-button {
+	font-weight: 700;
+}
+
+/* Campaigns and Placements */
+.placement {
+	position: relative;
+}
+.placement-name {
+	padding-left: 20px;
+}
+.placement-error-dot {
+	background-color: #b267a2;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	display: inline-block;
+	height: 8px;
+	position: absolute;
+	left: 17px;
+	top: 23px;
+	width: 8px;
 }
