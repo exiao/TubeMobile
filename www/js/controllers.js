@@ -29,16 +29,10 @@ angular.module('starter.controllers', [])
     $scope.init();
 })
 
-.controller('PlacementsDetailCtrl', function($scope, $stateParams, Placements, $location) {
+.controller('PlacementsDetailCtrl', function($scope, $stateParams, Placements) {
     $scope.placement = Placements.get($stateParams.placementId);
     $scope.init = function() {
     	$scope.placement_details = Placements.getDetails($scope.placement.campaign_placement_key);
     }
     $scope.init();
-
-        // TODO: make swipe right useful
-//    $scope.onSwipeRight = function () {
-//        console.log('swiped right');
-//        $location.path('/login')
-//    };
 });
