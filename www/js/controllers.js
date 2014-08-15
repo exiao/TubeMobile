@@ -10,7 +10,7 @@ angular.module('starter.controllers', [])
     $scope.campaigns = Campaigns.all();
 })
 
-.controller('CampaignsDetailCtrl', function($scope, $stateParams, Campaigns, Placements) {
+.controller('CampaignsDetailCtrl', function($scope, $stateParams, $http, Campaigns, Placements) {
     $scope.campaign = Campaigns.get($stateParams.campaignId);
     $scope.placements = Placements.all_by_username('justin.sung@tubemogul.com');
     $scope.isError = function(status) {
