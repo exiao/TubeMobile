@@ -58,7 +58,6 @@ angular.module('starter.controllers', [])
     });
     $scope.dateState = DateState.get();
 
-        i = 0;
 
     $scope.onSwipeRight = function() {
         var nextRoute = Campaigns.getNextRoute();
@@ -75,7 +74,7 @@ angular.module('starter.controllers', [])
     }
 })
 
-.controller('PlacementsDetailCtrl', function($scope, $stateParams, Placements, DateState) {
+.controller('PlacementsDetailCtrl', function($scope, $stateParams, Placements, DateState, $location) {
     Placements.get($stateParams.campaignKey, $stateParams.placementId).then(function(data) {
         $scope.click_rate = data.response.ctr;
         $scope.completion_rate = data.response.pct_completions_100;
@@ -85,6 +84,21 @@ angular.module('starter.controllers', [])
         $scope.impressions = $scope.placement.impressions;
     });
     $scope.dateState = DateState.get();
+
+    // TODO: duplicated and campaign detail
+    $scope.onSwipeRight = function() {
+        var nextRoute = Placements.getNextRoute();
+        if (nextRoute) {
+            $location.path(nextRoute);
+        }
+    }
+
+    $scope.onSwipeLeft = function() {
+        var prevRoute = Placements.getPrevRoute()
+        if (prevRoute) {
+            $location.path(prevRoute);
+        }
+    }
 })
 
 .controller('DatePickerCtrl', function($scope, $ionicNavBarDelegate, DateState) {

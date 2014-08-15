@@ -49,6 +49,7 @@ angular.module('starter.services', [])
                 });
             return deferred.promise;
         },
+        // TODO: everything below here is a crappy hardcoded hack
         getNextRoute: function() {
             if (currentRoute >= 0 && currentRoute < campaignRoutes.length) {
                 var route = campaignRoutes[currentRoute];
@@ -76,6 +77,15 @@ angular.module('starter.services', [])
 
 .factory('Placements', function($http, $q) {
     var api_host = 'http://172.16.131.105:8080';
+    // TODO: Don't judge me, I just want swiping to work. Swipe says these are the 4 campaigns to the right
+    var placementRoutes = [
+        '/tab/campaigns/ak0Y3lt4lr2RacUNYH03/placements/pu4SGl9ZGqOUL8KYaaHA',
+        '/tab/campaigns/ak0Y3lt4lr2RacUNYH03/placements/5jfGJl01BH03u4RRjXJd',
+        '/tab/campaigns/ak0Y3lt4lr2RacUNYH03/placements/KFM47IP8F9iT87YCTU4j',
+        '/tab/campaigns/ak0Y3lt4lr2RacUNYH03/placements/FbRF9fFGcSICCXv6j9E3'
+    ];
+
+    var currentRoute = 0;
     
     return {
         get: function(campaign_key, placement_id) {
@@ -93,6 +103,29 @@ angular.module('starter.services', [])
                     deferred.reject(data);
                 });
             return deferred.promise;
+        },
+        // TODO: Everything below here is a hardcoded crappy hack
+        getNextRoute: function() {
+            if (currentRoute >= 0 && currentRoute < placementRoutes.length) {
+                var route = placementRoutes[currentRoute];
+                if (currentRoute !== placementRoutes.length - 1) {
+                    currentRoute++;
+                }
+                return route;
+            }
+
+            return null;
+        },
+        getPrevRoute: function() {
+            if (currentRoute >= 0 && currentRoute < placementRoutes.length){
+                var route = placementRoutes[currentRoute];
+                if (currentRoute !== 0) {
+                    currentRoute--;
+                }
+                return route;
+            }
+
+            return null;
         }
     }
 })
