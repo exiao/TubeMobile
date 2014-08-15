@@ -1,6 +1,6 @@
 angular.module('starter.services', [])
 
-.factory('Campaigns', function($http) {
+.factory('Campaigns', function($http, $q) {
     // FIXME: Replace with API call
     var api_host = 'http://172.16.131.105:8080';
     var campaigns = [
@@ -79,14 +79,18 @@ angular.module('starter.services', [])
 
     return {
         all: function(email) {
+        	var deferred = $q.defer();
 	    	$http({
 	    			method: 'GET',
 	    			url: api_host+'/email/'+email,
 	    		})
 	    		.success(function(data) {
-	    			return data;
-	    		});
-
+	                deferred.resolve(data);
+	            })
+	            .error(function(data) {
+	                deferred.reject(data);
+	            });
+        	return deferred.promise;
         },
         get: function(id) {
             var campaign =  campaigns.filter(function(campaign) {
