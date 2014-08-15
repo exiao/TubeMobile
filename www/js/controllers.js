@@ -50,4 +50,11 @@ angular.module('starter.controllers', [])
         $scope.cost = $scope.placement.cost;
         $scope.impressions = $scope.placement.impressions;
     });
+})
+
+.controller('DatePickerCtrl', function($scope, $ionicNavBarDelegate) {
+    $scope.goBack = function() {
+        console.log('i ran');
+        $ionicNavBarDelegate.back();
+    };
 });

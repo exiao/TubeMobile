@@ -1,0 +1,19 @@
+.picker-buttons {
+  margin: 15px 0 0 0;
+  text-align: center;
+
+  button {
+    border: none;
+    color: white;
+    height: 30px;
+    width: 9%;
+  }
+}
+
+#cancel {
+  background-color: $app-gray-background;
+}
+
+#save {
+  background-color: $app-blue-background;
+}

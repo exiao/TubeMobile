@@ -8858,9 +8858,30 @@ a.button {
 
 .header-icon, .ion-plus, .ion-calendar {
   position: absolute;
-  right: 1%; }
+  right: 1%;
+  z-index: 1; }
   .header-icon:before, .ion-plus:before, .ion-calendar:before {
-    color: black;
+    color: white;
     font-size: 24px; }
+
+.back-button {
+  color: white; }
+  .back-button:before {
+    color: white; }
+
+.picker-buttons {
+  margin: 15px 0 0 0;
+  text-align: center; }
+  .picker-buttons button {
+    border: none;
+    color: white;
+    height: 30px;
+    width: 9%; }
+
+#cancel {
+  background-color: #bebebe; }
+
+#save {
+  background-color: #51b1d9; }
 
 /*# sourceMappingURL=style.css.map */
