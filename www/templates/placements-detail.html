@@ -23,8 +23,9 @@
   					<div class="col col-50">{{placement_details.cost | formatPrice}}</div>
   				</div>
         	</ion-item>
-            <ion-item>Start Date: {{placement.start_time}}</ion-item>
-            <ion-item>End Date: {{placement.start_time}}</ion-item>
+            <ion-item>
+	            {{placement.start_time}} to {{placement.end_time}}
+	        </ion-item>
         </ion-list>
     </ion-content>
 </ion-view>
