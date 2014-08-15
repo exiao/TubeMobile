@@ -33,10 +33,8 @@ angular.module('starter.services', [])
 	            });
         	return deferred.promise;
         },
-        get: function(campaign_key) {
-            var deferred = $q.defer(),
-                start = '2014-08-01',
-                end = '2014-09-01';
+        get: function(campaign_key, start, end) {
+            var deferred = $q.defer();
             $http({
                     method: 'GET',
                     url: api_host+'/cp_key/'+campaign_key+'/start/'+start+'/end/'+end,
@@ -88,10 +86,8 @@ angular.module('starter.services', [])
     var currentRoute = 0;
     
     return {
-        get: function(campaign_key, placement_id) {
-            var deferred = $q.defer(),
-                start = '2014-08-01',
-                end = '2014-09-01';
+        get: function(campaign_key, placement_id, start, end) {
+            var deferred = $q.defer();
             $http({
                     method: 'GET',
                     url: api_host+'/cp_key/'+campaign_key+'/placement_id/'+placement_id+'/start/'+start+'/end/'+end,
@@ -131,12 +127,12 @@ angular.module('starter.services', [])
 })
 
 .factory('DateState', function() {
-    var date = new Date();
-    var currentDate = {
-        start: new Date(date.getFullYear(), date.getMonth(), 1),
-        end: new Date(date.getFullYear(), date.getMonth() + 1, 0)
-    };
-
+    var date = new Date(),
+    	endDate = new Date(date.getFullYear(), date.getMonth() + 1, 0),
+    	currentDate = {
+	        start: date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate(),
+	        end: endDate.getFullYear()+'-'+(endDate.getMonth()+1)+'-'+endDate.getDate(),
+	    };
     return {
         get: function() {
             return currentDate;
