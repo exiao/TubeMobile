@@ -50,4 +50,8 @@ angular.module('starter.controllers', [])
         $scope.cost = $scope.placement.cost;
         $scope.impressions = $scope.placement.impressions;
     });
+})
+
+.controller('DatePickerCtrl', function($scope) {
+
 });
