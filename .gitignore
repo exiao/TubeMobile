@@ -2,3 +2,5 @@
 platforms/
 plugins/
 *~
+www/css/
+.sass-cache/
