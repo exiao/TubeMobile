@@ -30,9 +30,12 @@
   			<div class="item item-divider">
     			Placements
   			</div>
-            <ion-item class="placement" ng-repeat="placement in placements" type="item-text-wrap"href="#/tab/campaigns/{{campaign.campaign_key}}/placements/{{placement.placement_id}}">
+            <ion-item class="placement" ng-show='placements' ng-repeat="placement in placements" type="item-text-wrap" href="#/tab/campaigns/{{campaign.campaign_key}}/placements/{{placement.placement_id}}">
             	<div class="placement-error-dot" ng-show="isError(placement.status)"></div>
-                <div class="placement-name">{{placement.placement_name | limitString: 25}}</div>
+                <div class="placement-name" >{{placement.placement_name | limitString: 25}}</div>
+            </ion-item>
+            <ion-item class="placement" ng-show='!placements' type="item-text-wrap" >
+                <div class="placement-name">Loading Placements ...</div>
             </ion-item>
         </ion-list>
     </ion-content>
