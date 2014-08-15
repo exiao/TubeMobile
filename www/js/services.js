@@ -4,7 +4,7 @@ angular.module('starter.services', [])
     // FIXME: Replace with API call
 
 })
-.factory('Campaigns', function($http, $q) {
+.factory('Campaigns', function($http, $q, $filter) {
     var api_host = 'http://172.16.131.105:8080';
 
     // TODO: Don't judge me, I just want swiping to work. Swipe says these are the 4 campaigns to the right
@@ -35,6 +35,9 @@ angular.module('starter.services', [])
         },
         get: function(campaign_key, start, end) {
             var deferred = $q.defer();
+
+            start = $filter('date')(start, 'yyyy-MM-dd');
+            end = $filter('date')(end, 'yyyy-MM-dd');
             $http({
                     method: 'GET',
                     url: api_host+'/cp_key/'+campaign_key+'/start/'+start+'/end/'+end,
@@ -73,7 +76,7 @@ angular.module('starter.services', [])
     }
 })
 
-.factory('Placements', function($http, $q) {
+.factory('Placements', function($http, $q, $filter) {
     var api_host = 'http://172.16.131.105:8080';
     // TODO: Don't judge me, I just want swiping to work. Swipe says these are the 4 campaigns to the right
     var placementRoutes = [
@@ -88,6 +91,8 @@ angular.module('starter.services', [])
     return {
         get: function(campaign_key, placement_id, start, end) {
             var deferred = $q.defer();
+            start = $filter('date')(start, 'yyyy-MM-dd');
+            end = $filter('date')(end, 'yyyy-MM-dd');
             $http({
                     method: 'GET',
                     url: api_host+'/cp_key/'+campaign_key+'/placement_id/'+placement_id+'/start/'+start+'/end/'+end,
@@ -127,12 +132,12 @@ angular.module('starter.services', [])
 })
 
 .factory('DateState', function() {
-    var date = new Date(),
-    	endDate = new Date(date.getFullYear(), date.getMonth() + 1, 0),
-    	currentDate = {
-	        start: date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate(),
-	        end: endDate.getFullYear()+'-'+(endDate.getMonth()+1)+'-'+endDate.getDate(),
-	    };
+        var date = new Date();
+        var currentDate = {
+            start: new Date(date.getFullYear(), date.getMonth(), 1),
+            end: new Date(date.getFullYear(), date.getMonth() + 1, 0)
+        };
+
     return {
         get: function() {
             return currentDate;
