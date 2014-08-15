@@ -17,4 +17,9 @@ angular.module('starter.controllers', [])
 
 .controller('PlacementsDetailCtrl', function($scope, $stateParams, Placements) {
     $scope.placement = Placements.get($stateParams.placementId);
-});
+})
+
+.controller('DatePickerCtrl', function($scope) {
+
+})
+;
