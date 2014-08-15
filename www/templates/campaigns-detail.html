@@ -9,19 +9,23 @@
         <ion-list>
             <ion-item class="row row-padded">
 				<div class="col col-50">Impressions</div>
-				<div class="col col-50 right">{{impressions | formatNumberCommas}}</div>
+				<div class="col col-50 right" ng-show="impressions">{{impressions | formatNumberCommas}}</div>
+                <div class="col col-50 right" ng-show="!impressions">0</div>
         	</ion-item>
             <ion-item class="row row-padded">
 				<div class="col col-50">Completion Rate</div>
-				<div class="col col-50 right">{{completion_rate | formatPercent}}</div>
+				<div class="col col-50 right" ng-show="completion_rate">{{completion_rate | formatPercent}}</div>
+                <div class="col col-50 right" ng-show="!completion_rate">0%</div>
         	</ion-item>
             <ion-item class="row row-padded">
 				<div class="col col-50">Click Rate</div>
-				<div class="col col-50 right">{{click_rate | formatPercent}}</div>
+				<div class="col col-50 right" ng-show="click_rate">{{click_rate | formatPercent}}</div>
+                <div class="col col-50 right" ng-show="!click_rate">0%</div>
         	</ion-item>
             <ion-item class="row row-padded">
 				<div class="col col-50">Cost</div>
-				<div class="col col-50 right">{{cost | formatPrice}}</div>
+				<div class="col col-50 right" ng-show="cost">{{cost | formatPrice}}</div>
+                <div class="col col-50 right" ng-show="!cost">$0</div>
         	</ion-item>
   			<div class="item item-divider">
     			Placements
