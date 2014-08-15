@@ -37,7 +37,7 @@ angular.module('starter.controllers', [])
     });
 })
 
-.controller('CampaignsDetailCtrl', function($scope, $stateParams, $http, Campaigns, Placements, DateState) {
+.controller('CampaignsDetailCtrl', function($scope, $stateParams, $http, Campaigns, Placements, DateState, $location) {
     Campaigns.all($stateParams.email).then(function(data) {
         $scope.campaign = data[0];
         $scope.campaign.campaign_key = $stateParams.campaignKey;
@@ -58,6 +58,22 @@ angular.module('starter.controllers', [])
             $scope.campaign.campaign_name = '2014 Detroit Zoo Summer Plan';
     });
     $scope.dateState = DateState.get();
+
+        i = 0;
+
+    $scope.onSwipeRight = function() {
+        var nextRoute = Campaigns.getNextRoute();
+        if (nextRoute) {
+            $location.path(nextRoute);
+        }
+    }
+
+    $scope.onSwipeLeft = function() {
+        var prevRoute = Campaigns.getPrevRoute()
+        if (prevRoute) {
+            $location.path(prevRoute);
+        }
+    }
 })
 
 .controller('PlacementsDetailCtrl', function($scope, $stateParams, Placements, DateState) {       

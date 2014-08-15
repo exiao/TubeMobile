@@ -7,6 +7,16 @@ angular.module('starter.services', [])
 .factory('Campaigns', function($http, $q) {
     var api_host = 'http://172.16.131.105:8080';
 
+    // TODO: Don't judge me, I just want swiping to work. Swipe says these are the 4 campaigns to the right
+    var campaignRoutes = [
+            '/tab/campaigns/cadreon.us@tubemogul.com/ak0Y3lt4lr2RacUNYH03',
+            '/tab/campaigns/accuen.us@tubemogul.com/fn4fUF1wLGN7D5YX3vqX',
+            '/tab/campaigns/btacy@doner.com/geLeRHA85447IMxdZh8E',
+            '/tab/campaigns/rtb_tests@tubemogul.com/U99AkIDItAJ6KupW4cDF'
+        ];
+
+    var currentRoute = 0;
+
     return {
         all: function(email) {
         	var deferred = $q.defer();
@@ -16,6 +26,7 @@ angular.module('starter.services', [])
 	    		})
 	    		.success(function(data) {
 	                deferred.resolve(data);
+                    lastAllResponse = data;
 	            })
 	            .error(function(data) {
 	                deferred.reject(data);
@@ -37,6 +48,28 @@ angular.module('starter.services', [])
                     deferred.reject(data);
                 });
             return deferred.promise;
+        },
+        getNextRoute: function() {
+            if (currentRoute >= 0 && currentRoute < campaignRoutes.length) {
+                var route = campaignRoutes[currentRoute];
+                if (currentRoute !== campaignRoutes.length - 1) {
+                    currentRoute++;
+                }
+                return route;
+            }
+
+            return null;
+        },
+        getPrevRoute: function() {
+            if (currentRoute >= 0 && currentRoute < campaignRoutes.length){
+                var route = campaignRoutes[currentRoute];
+                if (currentRoute !== 0) {
+                    currentRoute--;
+                }
+                return route;
+            }
+
+            return null;
         }
     }
 })
