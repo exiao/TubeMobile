@@ -23,11 +23,16 @@
 
 .ion-calendar {
   @extend .header-icon;
+  width: 30px;
 }
 .ion-power {
   @extend .header-icon;
   left: 3%;
+  width: 30px;
 }
 .ion-chevron-left {
   @extend .header-icon;
+
+  left: 3%;
+  width: 30px;
 }
