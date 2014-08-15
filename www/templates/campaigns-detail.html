@@ -2,7 +2,7 @@
     <ion-nav-buttons>
         <a href="#/tab/date-picker" class="ion-calendar"></a>
     </ion-nav-buttons>
-    <ion-content has-header="true">
+    <ion-content has-header="true" on-swipe-right="onSwipeRight()" on-swipe-left="onSwipeLeft()">
     	<div class="date-header">
             {{dateState.start | date:'dd MMMM yyyy'}} - {{dateState.end | date:'dd MMMM yyyy'}}
 		</div>
