@@ -77,7 +77,9 @@ angular.module('starter.controllers', [])
     }
 })
 
-.controller('PlacementsDetailCtrl', function($scope, $stateParams, Placements, DateState, $location) {
+.controller('PlacementsDetailCtrl', function($scope, $stateParams, Placements, DateState, $location, Campaigns) {
+	var email = Campaigns.lastEmail ? Campaigns.lastEmail : 'cadreon.us@tubemogul.com';
+	$scope.back_link = '#/tab/campaigns/'+email+'/'+$stateParams.campaignKey;
 	var start = DateState.get().start;
 	var end = DateState.get().end;
     Placements.get($stateParams.campaignKey, $stateParams.placementId, start, end).then(function(data) {

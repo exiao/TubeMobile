@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 To customize the look and feel of Ionic, you can override the variables
 in ionic's _variables.scss file.
@@ -8879,12 +8880,12 @@ a.button {
   top: 50%;
   margin-top: -10px; }
 
-.header-icon, .ion-plus, .ion-calendar, .ion-power {
+.header-icon, .ion-plus, .ion-calendar, .ion-power, .ion-chevron-left {
   position: absolute;
   right: 3%;
   z-index: 1;
   top: 9px; }
-  .header-icon:before, .ion-plus:before, .ion-calendar:before, .ion-power:before {
+  .header-icon:before, .ion-plus:before, .ion-calendar:before, .ion-power:before, .ion-chevron-left:before {
     color: white;
     font-size: 24px; }
 
@@ -8894,6 +8895,9 @@ a.button {
     color: white; }
 
 .ion-power {
+  left: 3%; }
+
+.ion-chevron-left {
   left: 3%; }
 
 .picker-buttons {

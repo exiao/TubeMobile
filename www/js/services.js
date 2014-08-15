@@ -26,7 +26,7 @@ angular.module('starter.services', [])
 	    		})
 	    		.success(function(data) {
 	                deferred.resolve(data);
-                    lastAllResponse = data;
+                    this.lastEmail = email;
 	            })
 	            .error(function(data) {
 	                deferred.reject(data);
@@ -41,6 +41,7 @@ angular.module('starter.services', [])
                 })
                 .success(function(data) {
                     deferred.resolve(data);
+                    this.lastGetResponse;
                 })
                 .error(function(data) {
                     deferred.reject(data);
@@ -69,7 +70,9 @@ angular.module('starter.services', [])
             }
 
             return null;
-        }
+        },
+        lastEmail : null,
+        lastGetResponse: null
     }
 })
 
