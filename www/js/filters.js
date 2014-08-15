@@ -17,6 +17,10 @@ angular.module('starter.filters', [])
 })
 .filter('limitString', function() {
     return function(str, chars) {
-    	return (str.length < chars ? str : str.substring(0, chars)+'...');
+    	if(!chars) {
+    		return str;
+    	} else {
+	    	return (str.length < chars ? str : str.substring(0, chars)+'...');
+    	}
     }
 });

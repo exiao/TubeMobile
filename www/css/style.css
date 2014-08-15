@@ -8725,7 +8725,7 @@ a.button {
   font-size: 14px;
   text-transform: uppercase; }
 
-.button.tm-button-blue:active {
+.button.tm-button-blue.activated {
   background: #79c2df; }
 
 .row-padded,
@@ -8744,6 +8744,14 @@ a.button {
 
 .button-icon.ion-ios7-arrow-back.button.back-button {
   width: 24px; }
+
+.trim-string {
+  max-width: 110%;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: relative; }
 
 /* Login */
 @-webkit-keyframes rotate {
@@ -8819,7 +8827,7 @@ a.button {
   padding-left: 20px; }
 
 .placement-error-dot {
-  background-color: #b267a2;
+  background-color: #e9454b;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
@@ -8856,12 +8864,12 @@ a.button {
   font-size: 24px;
   height: 10px; }
 
-.header-icon, .ion-plus, .ion-calendar {
+.header-icon, .ion-plus, .ion-calendar, .ion-power {
   position: absolute;
   right: 3%;
   z-index: 1;
   top: 9px; }
-  .header-icon:before, .ion-plus:before, .ion-calendar:before {
+  .header-icon:before, .ion-plus:before, .ion-calendar:before, .ion-power:before {
     color: white;
     font-size: 24px; }
 
@@ -8869,6 +8877,9 @@ a.button {
   color: white; }
   .back-button:before {
     color: white; }
+
+.ion-power {
+  left: 3%; }
 
 .picker-buttons {
   margin: 15px 0 0 0;
