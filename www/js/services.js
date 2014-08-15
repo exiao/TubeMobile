@@ -23,7 +23,7 @@ angular.module('starter.services', [])
         	return deferred.promise;
         },
         get: function(campaign_key) {
-            var deferred = $q.defer(),
+            var deferred = $q.defer()
                 start = '2014-08-02',
                 end = '2014-09-12';
             $http({
