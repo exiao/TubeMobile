@@ -82,6 +82,7 @@ angular.module('starter.controllers', [])
 	$scope.back_link = '#/tab/campaigns/'+email+'/'+$stateParams.campaignKey;
 	var start = DateState.get().start;
 	var end = DateState.get().end;
+    console.log('i ran');
     Placements.get($stateParams.campaignKey, $stateParams.placementId, start, end).then(function(data) {
         $scope.click_rate = data.response.ctr;
         $scope.completion_rate = data.response.pct_completions_100;
@@ -90,7 +91,11 @@ angular.module('starter.controllers', [])
         $scope.cost = $scope.placement.cost / 1000000.0;
         $scope.impressions = $scope.placement.impressions;
     });
+
+    console.log('i ran too');
     $scope.dateState = DateState.get();
+
+    console.log($scope.dateState);
 
     // TODO: duplicated and campaign detail
     $scope.onSwipeRight = function() {
