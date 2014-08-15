@@ -85,7 +85,27 @@ angular.module('starter.services', [])
                 return campaign.campaign_id == id;
             });
             return campaigns[0];
-        }
+        },
+        getDetails: function(key) {
+	    	/* TODO: Use Stats API to get campaign details */
+	    	var data = {
+	    		impressions: 100000,
+	    		completion_rate: 85,
+	    		click_rate: 125,
+	    		cost: 1000
+	    	}
+	    	return data;
+	    	/*
+	    	$http({
+	    			method: 'GET',
+	    			url: '',
+	    			data: {campaign_key: key}
+	    		})
+	    		.success(function(data) {
+	    			return data;
+	    		});
+			*/
+	    }
     }
 })
 
@@ -406,7 +426,27 @@ angular.module('starter.services', [])
                 return placement.campaign_placement_id == id;
             })
             return placements[0];
-        }
+        },
+        getDetails: function(key) {
+	    	/* TODO: Use Stats API to get placement details */
+	    	var data = {
+	    		impressions: 100000,
+	    		completion_rate: 85,
+	    		click_rate: 125,
+	    		cost: 1000
+	    	}
+	    	return data;
+	    	/*
+	    	$http({
+	    			method: 'GET',
+	    			url: '',
+	    			data: {campaign_placement_key: key}
+	    		})
+	    		.success(function(data) {
+	    			return data;
+	    		});
+			*/
+	    }
     }
 })
 

@@ -6,17 +6,22 @@
     			Campaign Details
   			</div>
             <ion-item>
-            	<div class="row">
+            	<div class="row details-header">
   					<div class="col col-50">Impressions</div>
   					<div class="col col-50">Completion Rate</div>
   				</div>
             	<div class="row">
-  					<div class="col col-50">{{campaign_details.impressions}}</div>
-  					<div class="col col-50">{{campaign_details.completion_rate | toPercent}}</div>
+  					<div class="col col-50">{{campaign_details.impressions | formatNumberCommas}}</div>
+  					<div class="col col-50">{{campaign_details.completion_rate | formatPercent}}</div>
+  				</div>
+  				<div class="details-header-divider"></div>
+            	<div class="row details-header">
+  					<div class="col col-50">Click Rate</div>
+  					<div class="col col-50">Cost</div>
   				</div>
             	<div class="row">
-  					<div class="col col-50">{{campaign_details.click_rate | toPercent}}</div>
-  					<div class="col col-50">{{campaign_details.cost}}</div>
+  					<div class="col col-50">{{campaign_details.click_rate | formatPercent}}</div>
+  					<div class="col col-50">{{campaign_details.cost | formatPrice}}</div>
   				</div>
         	</ion-item>
   			<div class="item item-divider">
