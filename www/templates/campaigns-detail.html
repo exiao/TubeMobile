@@ -9,19 +9,19 @@
         <ion-list>
             <ion-item class="row row-padded">
 				<div class="col col-50">Impressions</div>
-				<div class="col col-50 right">{{campaign_details.impressions | formatNumberCommas}}</div>
+				<div class="col col-50 right">{{impressions | formatNumberCommas}}</div>
         	</ion-item>
             <ion-item class="row row-padded">
 				<div class="col col-50">Completion Rate</div>
-				<div class="col col-50 right">{{campaign_details.completion_rate | formatPercent}}</div>
+				<div class="col col-50 right">{{completion_rate | formatPercent}}</div>
         	</ion-item>
             <ion-item class="row row-padded">
 				<div class="col col-50">Click Rate</div>
-				<div class="col col-50 right">{{campaign_details.click_rate | formatPercent}}</div>
+				<div class="col col-50 right">{{click_rate | formatPercent}}</div>
         	</ion-item>
             <ion-item class="row row-padded">
 				<div class="col col-50">Cost</div>
-				<div class="col col-50 right">{{campaign_details.cost | formatPrice}}</div>
+				<div class="col col-50 right">{{cost | formatPrice}}</div>
         	</ion-item>
   			<div class="item item-divider">
     			Placements
