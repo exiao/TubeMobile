@@ -26,7 +26,7 @@ $app-gray-background: #BEBEBE;
 	font-size: 14px;
 	text-transform: uppercase;
 }
-.button.tm-button-blue:active {
+.button.tm-button-blue.activated {
 	background: #79c2df;
 }
 .row-padded,
@@ -45,4 +45,12 @@ $app-gray-background: #BEBEBE;
 }
 .button-icon.ion-ios7-arrow-back.button.back-button {
 	width: 24px;
+}
+.trim-string {
+  	max-width: 110%;
+  	display: inline-block;
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+  	white-space: nowrap;  
+  	position: relative;
 }
