@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 To customize the look and feel of Ionic, you can override the variables
 in ionic's _variables.scss file.
@@ -8717,11 +8718,14 @@ a.button {
 
 .login-label {
   color: #555;
-  font-size: 14px;
-  padding-right: 15px; }
+  font-size: 14px; }
 
 .login-button {
   font-weight: 700; }
+
+.login-username input,
+.login-password input {
+  padding-left: 25px; }
 
 /* Campaigns and Placements */
 .placement {
