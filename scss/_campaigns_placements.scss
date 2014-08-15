@@ -17,6 +17,12 @@
   	top: 23px;
   	width: 8px;
 }
+
+.special-dot {
+  left: 14px;
+  top: 31px;
+}
+
 .details-header .col {
   	font-size: 12px;
   	font-weight: 700;
@@ -42,4 +48,11 @@
   	height: 25px;
   	font-size: 24px;
   	height: 10px;
+}
+.item-next {
+	color: #999;
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	margin-top: -10px;
 }

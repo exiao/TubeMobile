@@ -8789,7 +8789,8 @@ a.button {
   left: 50%;
   margin: -40px 0 0 -40px; }
 
-.loading-text {
+.loading-text,
+.loading-code {
   color: #777;
   position: fixed;
   width: 100%;
@@ -8797,6 +8798,10 @@ a.button {
   top: 50%;
   text-transform: uppercase;
   margin-top: 40px; }
+
+.loading-code {
+  color: #ddd;
+  top: 65%; }
 
 .logo {
   display: block;
@@ -8863,6 +8868,13 @@ a.button {
   height: 25px;
   font-size: 24px;
   height: 10px; }
+
+.item-next {
+  color: #999;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -10px; }
 
 .header-icon, .ion-plus, .ion-calendar, .ion-power {
   position: absolute;
