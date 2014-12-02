@@ -20,7 +20,7 @@ angular.module('starter.services', [])
     return {
         all: function(email) {
         	var deferred = $q.defer();
-	    	$http({
+            $http({
 	    			method: 'GET',
 	    			url: api_host+'/email/'+email,
 	    		})
